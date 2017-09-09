@@ -1,0 +1,26 @@
+{
+  "name": "numbas-algebra-navales",
+  "version": "0.1.0",
+  "description": "Algebra Numbas extension for Naval Engineering @ UPM",
+  "private": true,
+  "main": "src/algebra-navales.js",
+  "scripts": {
+    "lint": "jshint src/",
+    "pack": "uglifyjs -o dist/algebra-navales.js --mangle -- src/algebra-navales.js && zip -j dist/algebra-navales.zip dist/*.js",
+    "clean": "rm dist/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManuelBlanc/numbas-algebra-navales.git"
+  },
+  "author": "ManuelBlanc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ManuelBlanc/numbas-algebra-navales/issues"
+  },
+  "homepage": "https://github.com/ManuelBlanc/numbas-algebra-navales#readme",
+  "devDependencies": {
+    "jshint": "^2.9.5",
+    "uglify-js": "^3.0.28"
+  }
+}
