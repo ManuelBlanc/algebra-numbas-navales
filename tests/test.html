@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="qunit.css" />
+        <script src="qunit.js"></script>
+
+        <!-- numbas stuff -->
+        <script src="../runtime/scripts/numbas.js" charset="utf-8"></script>
+        <script src="../runtime/scripts/jme.js" charset="utf-8"></script>
+        <script src="../runtime/scripts/jme-builtins.js" charset="utf-8"></script>
+        <script src="../runtime/scripts/jme-display.js" charset="utf-8"></script>
+        <script src="../runtime/scripts/math.js" charset="utf-8"></script>
+        <script src="../runtime/scripts/util.js" charset="utf-8"></script>
+
+        <!-- Algebra Navales Extension -->
+        <script src="../src/algebra-navales.js"></script>
+
+    </head>
+    <body>
+        <h1 id="qunit-header">Numbas JME unit tests</h1>
+        <!--
+        <h2 id="qunit-banner"></h2>
+        <div id="qunit-testrunner-toolbar"></div>
+        <h2 id="qunit-userAgent"></h2>
+        <ol id="qunit-tests"></ol>
+        -->
+        <div id="qunit-fixture">test markup, will be hidden</div>
+
+        <script type="text/javascript">
+            //Numbas.queueScript('base', [], function() {});
+            Numbas.queueScript('tests', ['jme'], function tests() {
+
+                var algebraNavales = Numbas.extensions['algebra-navales'];
+
+                var jme = Numbas.jme;
+                var math = Numbas.math;
+                var types = jme.types;
+                var tokenise = jme.tokenise;
+
+                QUnit.assert.raisesNumbasError = function(fn, error, description) {
+                    raises(fn, function(e) { return e.originalMessage == error}, description);
+                };
+
+                QUnit.module('JME extension');
+                QUint.test('simple_matrix', function(assert) {
+
+                    assert.equal(1, 1, 'esta mierda mola');
+                });
+        </script>
+    </body>
+</html>
